@@ -7,7 +7,7 @@ import 'element-plus/dist/index.css'
 //@ts-ignore
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-
+import router from '@/router'
 import 'virtual:svg-icons-register'
 
 
@@ -15,4 +15,5 @@ const app = createApp(App)
 app.use(ElementPlus, {
     locale: zhCn,
 })
-    .mount("#app")
+app.use(router)
+app.mount("#app")

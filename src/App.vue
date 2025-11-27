@@ -22,18 +22,7 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-
-  <el-button type="primary" size="default" :icon="Plus">主要按钮</el-button>
-  <svg-icon name="lock" color="red" size="32px" />
+  <router-view></router-view>
 </template>
 
 <style scoped>

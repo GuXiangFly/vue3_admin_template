@@ -2,6 +2,23 @@
 import HelloWorld from './components/HelloWorld.vue'
 import {Plus} from '@element-plus/icons-vue'
 import SvgIcon  from '@/components/SvgIcon/index.vue'
+import { onMounted } from 'vue'
+import request from '@/utils/request'
+
+
+onMounted(()=>{
+  request({
+    url: '/user/login',
+    method: 'post',
+    data:{
+      "username": "admin",
+      "password": "111111",
+    }
+  }).then((res)=>{
+    console.log(res)
+  })
+  })
+
 </script>
 
 <template>
@@ -16,7 +33,7 @@ import SvgIcon  from '@/components/SvgIcon/index.vue'
   <HelloWorld msg="Vite + Vue" />
 
   <el-button type="primary" size="default" :icon="Plus">主要按钮</el-button>
-  <svg-icon  name="lock" color="red" size="32px" />
+  <svg-icon name="lock" color="red" size="32px" />
 </template>
 
 <style scoped>

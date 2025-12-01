@@ -5,7 +5,7 @@
       <el-col :span="12" :xs="0"></el-col>
       <el-col :span="12" :xs="24">
         <!-- 登录的表单 -->
-        <el-form class="login_form" :model="loginForm" :rules="rules" ref="loginForms">
+        <el-form class="login_form" :model="loginForm"  ref="loginForms">
           <h1>Hello</h1>
           <h2>欢迎来到硅谷甄选</h2>
           <el-form-item prop="username">
@@ -28,9 +28,11 @@
 import {User, Lock} from '@element-plus/icons-vue';
 import {reactive, ref} from 'vue';
 import {useRouter, useRoute} from 'vue-router';
+import useUserStore from "@/store/modules/user.ts";
 import {ElNotification} from 'element-plus';
 //引入获取当前时间的函数
 import {getTime} from '@/utils/time';
+
 //引入用户相关的小仓库
 
 //获取el-form组件
@@ -44,6 +46,8 @@ let loading = ref(false);
 //收集账号与密码的数据
 let loginForm = reactive({username: 'admin', password: '111111'});
 
+let useStore = useUserStore();
+
 // 获取当前是早上还是下午还是晚上
 const login = async ()=>{
 
@@ -52,6 +56,7 @@ const login = async ()=>{
   //通知仓库发登录请求
   //请求成功->首页展示数据的地方
   //请求失败->弹出登录失败信息
+  useStore.userLogin(loginForm)
 }
 
 </script>

@@ -2,6 +2,7 @@
 *:after,
 *:before {
   box-sizing: border-box;
+
   outline: none;
 }
 
@@ -88,9 +89,12 @@ audio,
 video {
   font: inherit;
   font-size: 100%;
+
   margin: 0;
   padding: 0;
+
   vertical-align: baseline;
+
   border: 0;
 }
 
@@ -120,9 +124,10 @@ ul {
 blockquote,
 q {
   quotes: none;
+
   &:before,
   &:after {
-    content: "";
+    content: '';
     content: none;
   }
 }
@@ -131,16 +136,18 @@ sub,
 sup {
   font-size: 75%;
   line-height: 0;
+
   position: relative;
+
   vertical-align: baseline;
 }
 
 sup {
-  top: -0.5em;
+  top: -.5em;
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -.25em;
 }
 
 table {
@@ -153,14 +160,17 @@ textarea,
 button {
   font-family: inhert;
   font-size: inherit;
+
   color: inherit;
 }
 
 select {
-  text-indent: 0.01px;
-  text-overflow: "";
+  text-indent: .01px;
+  text-overflow: '';
+
   border: 0;
   border-radius: 0;
+
   -webkit-appearance: none;
   -moz-appearance: none;
 }

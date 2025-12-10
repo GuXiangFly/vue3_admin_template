@@ -42,7 +42,7 @@
       <Menu :menuList="item.children"></Menu>
     </el-sub-menu>
   </template>
-</template>7102gx
+</template>
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
@@ -56,6 +56,12 @@ const goRoute = (vc: any) => {
   //路由跳转
   console.log("goRoute : " , vc);
   $router.push(vc.index)
+}
+</script>
+
+<script lang="ts">
+export default {
+  name: 'Menu'
 }
 </script>
 

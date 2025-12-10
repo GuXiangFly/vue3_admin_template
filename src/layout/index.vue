@@ -9,25 +9,27 @@
           text-color="white"
           active-text-color="yellowgreen"
         >
-          <el-menu-item index="1">首页</el-menu-item>
-          <el-menu-item index="2">数据大屏</el-menu-item>
-          <el-sub-menu index="3">
-            <template #title>权限管理</template>
-            <el-menu-item index="2-1">用户管理</el-menu-item>
-            <el-menu-item index="2-1">角色管理</el-menu-item>
-          </el-sub-menu>
+          <Menu :menuList="userStore.menuRoutes"></Menu>
         </el-menu>
       </el-scrollbar>
     </div>
 
     <div class="layout_tabbar">234</div>
 
-    <div class="layout_main">main</div>
+    <div class="layout_main">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Logo from './logo/index.vue'
+import Menu from './menu/index.vue'
+
+import useUserStore from '@/store/modules/user';
+
+let userStore = useUserStore();
+
 </script>
 
 <style scoped lang="scss">

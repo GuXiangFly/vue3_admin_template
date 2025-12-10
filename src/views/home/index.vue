@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <h1>home</h1>
+    <h1>这是home页面</h1>
   </div>
 </template>
 
